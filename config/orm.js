@@ -2,15 +2,15 @@
 const connection = require('./connection.js');
 
 // Helper function for SQL syntax to add question marks (?, ?, ?) in query
-const printQuestionMarks = (num) => {
-    const arr = [];
+// const printQuestionMarks = (num) => {
+//     const arr = [];
 
-    for (let i = 0; i < num; i++) {
-        arr.push('?');
-    }
+//     for (let i = 0; i < num; i++) {
+//         arr.push('?');
+//     }
 
-    return arr.toString();
-};
+//     return arr.toString();
+// };
 
 // Helper function to convert object key/value pairs to SQL syntax
 const objToSql = (ob) => {
@@ -53,10 +53,11 @@ const orm = {
         queryString += cols.toString();
         queryString += ') ';
         queryString += 'VALUES (';
-        queryString += printQuestionMarks(vals.length);
+        // queryString += printQuestionMarks(vals.length);
+        queryString += '?';
         queryString += ') ';
 
-        console.log(queryString);
+        console.log(`These are the values: ${vals}`);
 
         connection.query(queryString, vals, (err, result) => {
             if (err) {

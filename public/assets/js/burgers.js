@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const newDevourState = {
                     devoured: newDevour,
                 };
+                // console.log(newDevourState);
 
                 fetch(`/api/burgers/${id}`, {
                     method: 'PUT',

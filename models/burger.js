@@ -1,6 +1,8 @@
 // Import the ORM to create functions that will interact with the database.
 const orm = require('../config/orm.js');
 
+// Storing our functions in an object named burger.
+// burger.all would perform a GET request, burger.create would create a POST request ect
 const burger = {
     all(cb) {
         orm.all('burgers', (res) => cb(res));

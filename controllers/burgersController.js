@@ -1,17 +1,22 @@
+// Creating our routes file that essentially tells the model what to do 
+// Setting up our requires
 const express = require('express');
-
 const router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
 const burger = require('../models/burger.js');
 
 // Create all our routes and set up logic within those routes where required.
+// When the home page is loaded it will perform a GET request immediately
 router.get('/', (req, res) => {
+    // Executes the burger.all() function and the response is called (data)
     burger.all((data) => {
+        // With the data we recieve we store it into a variable that is an object named hbsObject.
         const hbsObject = {
             burgers: data,
         };
         console.log(hbsObject);
+        // We then render using the index handlebar and pass the hbsObject variable
         res.render('index', hbsObject);
     });
 });

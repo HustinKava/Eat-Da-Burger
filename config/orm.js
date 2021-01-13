@@ -1,14 +1,14 @@
 // Import MySQL connection.
 const connection = require('./connection.js');
 
-// Helper function for SQL syntax to add question marks (?, ?, ?) in query
+// For Loop to that prints a ? based on how many values are in the array located in the burgerController.js file
+// For loop take in a number and pushes the ? to an array and then returns the array as a string to print '?'
 const printQuestionMarks = (num) => {
     const arr = [];
 
     for (let i = 0; i < num; i++) {
         arr.push('?');
     }
-    console.log(`console logging the array: ${arr}`);
     return arr.toString();
 };
 
@@ -36,6 +36,7 @@ const objToSql = (ob) => {
 };
 
 // Object for all our SQL statement functions.
+// Selecting everything from the table
 const orm = {
     all(tableInput, cb) {
         const queryString = `SELECT * FROM ${tableInput};`;
@@ -46,6 +47,7 @@ const orm = {
             cb(result);
         });
     },
+    // Creating a new burger name that passes the table, column and value (burger name)
     create(table, cols, vals, cb) {
         let queryString = `INSERT INTO ${table}`;
 
@@ -53,9 +55,10 @@ const orm = {
         queryString += cols.toString();
         queryString += ') ';
         queryString += 'VALUES (';
+        // Prints a ? depending on how many items are in the array associated with the burgersController.js file
         queryString += printQuestionMarks(vals.length);
         queryString += ') ';
-
+        // Making the the query connection and passing the entire queryString variable that has been concatenated above and the value (burger name)
         connection.query(queryString, vals, (err, result) => {
             if (err) {
                 throw err;
@@ -82,6 +85,7 @@ const orm = {
             cb(result);
         });
     },
+    // Deleting from the table burgers where the condition in our case would be devoured = true
     delete(table, condition, cb) {
         let queryString = `DELETE FROM ${table}`;
         queryString += ' WHERE ';

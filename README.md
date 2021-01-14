@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/License%3A-MIT-darkgreen.svg)
 
 ## Description
-With homework assignment 13 I was tasked with creating a single page web app that enables a user to add burger names, view the new burger they added, virtually eat the burger and then delete it. It was challenging to use MVC and understand how all the files were linked together. Although the app when viewed looks simple, the code working behind has a lot put into it. This application features full CRUD, meaning you can Create, Read, Update and Delete.
+With homework assignment 13 I was tasked with creating a single page web app that enables a user to add burger names, view the new burger they added, virtually eat the burger and then delete it. It was challenging to use MVC and understand how all the files were linked together. Although the app when viewed looks simple, the backend has a lot of code to make it function correctly. This application features full CRUD, meaning you can Create, Read, Update and Delete.
 
 ## Table Of Contents
 - [Technologies](#Technologies-Used)

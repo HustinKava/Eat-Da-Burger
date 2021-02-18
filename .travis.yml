@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- stable
+npm: true
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: ne1bbMshYyDrOrYZe9J2Km6B/KGRw3RUSUKHPM2H+WHEFwzorFQka0Bgcstu2sAByg6xsU1+OFZuWvQ+V13/cqJ2Aza3un9xcLGzhkR2N3GHfxsgYbRmu4vhP73Ek68f1HPluUxUwm08ivh812AC8YxbLbKHsh0IzyCKFO1FTIG7kTb6to5oFi2/S5An6DtHEoOUHOA3pDr5wGC6U2XVh71j5uQaUcYI+n39lxstVVS3CKQa52JPnPoN7YQiQGZEMvx7DLFKEbV/Vg+/u6FwuB17qyvqio3ezcI8dt/s8+cI0QsJx/WRWq7q600L+lneht5A5BOFDsjj2F/JdPbm8RpAcQXnUT7JLkJ3DZVzUjK1ICNQNY+c3fYuOYfvRroe6Xpf/y3Qag4BguQpUL6kfXnntLQR0eFRMgSTNIpt7gTWxAhweelPL3TIj+Wf+G73v7feytwXKdJczPpjpMzY20jP8SwMA3FzvG9ZIJrmtgb1VsIx6vshKWSYqCFZiQnODYVMPTfS4CUK4UjHrY8iWtQvIK3KL/eCRCVlkkxVjkapO9tL1p/ttXcVCiENxW9QwGekUc4yzzUblW/Hw3ow5KTwJDSs8inWukHs6LZ+9dEKgNFhlxEipcZsMMIJY2BPmHl2d3c+28qbeex7vd+gMAX4sq0JRfDv2LM6nkbcuD8=
+  app: blooming-citadel-30147
+  on:
+    all_branches: 'true'
+    repo: HustinKava/Eat-Da-Burger
+  skip_cleanup: 'true'
+script:
+- echo "skipping tests"
